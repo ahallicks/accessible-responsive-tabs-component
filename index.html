@@ -1,0 +1,59 @@
+<!doctype html>
+<html class="no-js" lang="en">
+	<head>
+		<meta charset="utf-8">
+
+		<title>Accessible & Responsive Tabs</title>
+
+		<!-- Viewport Meta-->
+		<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=2,user-scalable=1,viewport-fit=cover">
+
+		<!-- SEO Meta -->
+		<meta name="description" content="Meta description goes in here">
+		<meta name="robots" content="INDEX,FOLLOW">
+
+	</head>
+	<body itemscope itemtype="https://schema.org/WebPage">
+
+		<section>
+			<!-- Tab component start -->
+			<div class="tabbed">
+				<ul class="tabbed-tabs" role="tablist">
+					<li role="presentation" class="tabbed-tabs--tab">
+						<a href="#section1" role="tab" id="tab1" class="tabbed-tabs--tab__link" aria-selected="true">Tab section 1</a>
+					</li>
+					<li role="presentation" class="tabbed-tabs--tab">
+						<a href="#section2" role="tab" id="tab2" class="tabbed-tabs--tab__link">Tab section 2</a>
+					</li>
+					<li role="presentation" class="tabbed-tabs--tab">
+						<a href="#section3" role="tab" id="tab3" class="tabbed-tabs--tab__link">Tab section 3</a>
+					</li>
+				</ul>
+				<article id="section1" class="tabbed-panel" role="tabpanel" tabindex="-1" aria-labelledby="tab1">
+					<h2 class="aria-accordion--heading"><button aria-expanded="true" class="btn-faux aria-accordion--toggle"><span class="aria-accordion--toggle__icon">+</span>Tab Section 1 Title</button></h2>
+					<div tabindex="-1" class="aria-accordion--content">
+						<p>Aliquam mollis metus massa, sed rhoncus lorem rhoncus quis. Maecenas consequat hendrerit tortor eu varius. Sed et nunc non ante ultricies ultricies vel ac leo. Maecenas ornare ex in augue rutrum, ac interdum libero tristique. Sed auctor volutpat mi ac commodo. Suspendisse malesuada ipsum non lorem varius vehicula. Nullam convallis bibendum elit, sed cursus odio molestie vel. Aliquam mattis tellus ac turpis tristique sollicitudin. Sed aliquet, felis a semper tempor, sapien neque commodo nibh, in posuere purus nulla ut nunc. Nam sit amet nibh porta, pretium odio non, accumsan lacus. Fusce quis lacinia lacus, quis accumsan mauris.</p>
+		<p>Donec tellus tortor, iaculis et ipsum ut, <a href="#">feugiat cursus risus</a>. Nam vel blandit sapien. Nam ut condimentum urna. Quisque egestas lectus molestie ante congue, id volutpat justo aliquam. Cras urna risus, dignissim vitae sodales id, fermentum rhoncus mi. Pellentesque venenatis vehicula sollicitudin. Vivamus sem mauris, egestas a lorem vel, egestas imperdiet neque.</p>
+		<p>Donec volutpat suscipit neque a varius. Donec non sapien posuere, vehicula odio eu, volutpat ipsum. Quisque sodales, urna eu egestas varius, tortor odio congue tellus, a lacinia turpis nisl vitae justo. Curabitur mollis quam cursus, tempor lectus id, dignissim lacus. Mauris sagittis ex eu ligula malesuada, et sollicitudin elit mattis. Nulla ultrices elementum nisi at hendrerit. In eu tellus quis eros vestibulum tempus nec quis dui. Phasellus iaculis at ante vel vulputate. Nam hendrerit odio lorem, et lobortis mi porttitor ac. Cras eu cursus enim. Morbi et dictum urna, at scelerisque erat. Curabitur scelerisque risus vel sagittis placerat. Quisque ullamcorper molestie euismod. Aenean non sem a justo aliquam placerat. Donec vehicula felis quis diam convallis, eu porta leo consectetur.</p>
+					</div>
+				</article>
+				<article id="section2" class="tabbed-panel" role="tabpanel" tabindex="-1" aria-labelledby="tab2">
+					<h2 class="aria-accordion--heading"><button aria-expanded="false" class="btn-faux aria-accordion--toggle"><span class="aria-accordion--toggle__icon">+</span>Tab Section 2 Title</button></h2>
+					<div tabindex="-1" class="aria-accordion--content">
+						<p>Donec vulputate, lacus venenatis accumsan bibendum, erat eros mollis urna, in dignissim orci eros non eros. Pellentesque leo metus, auctor non mauris nec, pretium lobortis odio. Nunc cursus, arcu at sagittis efficitur, mi nulla maximus velit, at tempor ligula eros non arcu. Nulla facilisi. Integer vehicula tincidunt orci quis aliquam. Mauris a luctus dui, non ornare risus. Vivamus egestas vulputate ipsum vitae convallis. Proin egestas, nibh nec hendrerit tristique, nunc lorem luctus dolor, in malesuada massa eros vitae augue. Donec <a href="#">vulputate erat sit amet</a> sapien condimentum maximus. Donec ipsum nibh, fermentum ut accumsan vehicula, egestas eu turpis. Nulla facilisi. Aliquam pulvinar bibendum lacinia.</p>
+		<p>Fusce ullamcorper lobortis lorem quis imperdiet. Maecenas efficitur ipsum ante, et ultricies neque accumsan ac. Pellentesque dignissim quam id venenatis fermentum. Duis ex tellus, iaculis at gravida id, vehicula nec massa. Nulla consectetur eleifend tortor, ut condimentum felis venenatis eu. Praesent interdum turpis ut feugiat consectetur. Curabitur congue nunc nec lorem tempus pellentesque. Proin eu erat mattis, lobortis ligula eget, lobortis lacus. Donec dapibus mattis lectus, nec sollicitudin turpis ornare sed. Vivamus consectetur est vel a <a href="#">fermentum diam hendrerit</a> diam hendrerit. Maecenas sodales enim id aliquet ullamcorper. Nunc nunc nisi, posuere id elementum in, convallis in erat. Donec et malesuada ipsum. Integer nec lectus consectetur mauris suscipit tristique.</p>
+		<p>Suspendisse ac neque non nibh ornare pretium vitae non urna. Phasellus sed interdum urna. Maecenas vehicula ipsum viverra tempor fermentum. Praesent lacinia mi quis tortor laoreet gravida. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nullam feugiat lacinia odio, sed laoreet elit egestas ut. Nam odio ipsum, aliquam in lacus suscipit, iaculis rutrum dui. Nunc quis lacus mauris. Quisque eu nulla non nisi interdum aliquam. Fusce vehicula, nulla ornare laoreet fermentum, quam metus elementum ex, in pretium velit velit et dui. Aenean nisi elit, venenatis vitae faucibus nec, imperdiet nec lectus. Ut accumsan ullamcorper eros.</p>
+					</div>
+				</article>
+				<article id="section3" class="tabbed-panel" role="tabpanel" tabindex="-1" aria-labelledby="tab3">
+					<h2 class="aria-accordion--heading"><button aria-expanded="false" class="btn-faux aria-accordion--toggle"><span class="aria-accordion--toggle__icon">+</span>Tab Section 3 Title</button></h2>
+					<div tabindex="-1" class="aria-accordion--content">
+						<p>Suspendisse sit amet ultricies massa. Mauris tristique urna lorem, a aliquet risus ultricies ut. Curabitur at aliquet augue. Nam accumsan tortor et libero elementum congue. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Morbi faucibus ante odio, tristique ultricies tellus euismod in. Maecenas at mollis est, sit amet consequat mauris. Vivamus mollis sem justo, eu blandit metus maximus sed. Aliquam erat volutpat. Etiam luctus feugiat eros ut luctus. Donec ultrices faucibus dolor sed auctor. Pellentesque ut malesuada elit, <a href="#">dictum aliquet leo</a>. Etiam id interdum risus. Quisque ipsum tortor, vehicula sit amet lacus ac, scelerisque convallis sem. Donec odio sapien, dignissim vel nisl ac, dictum vulputate ante.</p>
+		<p>Morbi vitae <a href="#">maximus magna</a>, at iaculis quam. Ut ac feugiat magna, quis interdum mauris. Phasellu<a href="#">auctor sit amet</a> auctor sit amet arcu non, vulputate vulputate nisi. Nam et erat mi. Mauris faucibus condimentum scelerisque. Duis vulputate a risus non elementum. Aliquam erat volutpat. Vivamus dignissim nisi tellus, quis egestas quam lobortis vel. Nulla aliquet nunc vel feugiat accumsan.</p>
+					</div>
+				</article>
+			</div>
+		</section>
+
+	</body>
+</html>
