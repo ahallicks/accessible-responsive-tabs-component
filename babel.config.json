@@ -1,0 +1,6 @@
+{
+  "presets": [["minify", {
+    "mangle": true,
+    "removeConsole": true
+  }]]
+}
