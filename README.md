@@ -1,6 +1,6 @@
 # accessible-responsive-tabs-component
 
-An accessible and responsive tabs component
+An accessible and responsive tabs component. [Click here](https://ahallicks.github.io/accessible-responsive-tabs-component/) for a demo with added styles.
 
 ## Setup
 
