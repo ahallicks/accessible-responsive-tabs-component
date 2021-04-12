@@ -15,6 +15,16 @@ class Tabs {
 		this.tabbed = document.querySelectorAll('.tabbed');
 		this.tabbed.length && this.tabbed.forEach(objEl => this.setupTabs(objEl));
 
+		// Pop state for navigating through tabs
+		this.hash = window.location.hash;
+		this.popped = false;
+		window.onpopstate = e => {
+			if (e.state && e.state.tab) {
+				this.popped = true;
+				document.querySelector('a[href="' + e.state.tab + '"]').click();
+			}
+		};
+
 	}
 
 	/**
@@ -51,11 +61,11 @@ class Tabs {
 			objTab.addEventListener('keydown', e => {
 
 				// Get the index of the current tab in the tabs node list
-				let index = Array.prototype.indexOf.call(arrTabs, e.currentTarget);
+				const index = Array.prototype.indexOf.call(arrTabs, e.currentTarget);
 
 				// Work out which key the user is pressing and
 				// Calculate the new tab's index where appropriate
-				let dir = e.which === 37 ? index - 1 : e.which === 39 ? index + 1 : e.which === 40 ? "down" : null;
+				const dir = e.which === 37 ? index - 1 : e.which === 39 ? index + 1 : e.which === 40 ? "down" : null;
 				if (dir !== null) {
 
 					e.preventDefault();
@@ -83,8 +93,8 @@ class Tabs {
 				const currentTab = arrTablist.querySelector('[aria-selected]');
 
 				// Hide the current tab if it's the same parent
-				let tabIndex = Array.prototype.indexOf.call(arrTabs, currentTab);
-				let index = Array.prototype.indexOf.call(arrPanels, e.currentTarget.closest('.tabbed-panel'));
+				const tabIndex = Array.prototype.indexOf.call(arrTabs, currentTab);
+				const index = Array.prototype.indexOf.call(arrPanels, e.currentTarget.closest('.tabbed-panel'));
 
 				objPanelToggle.setAttribute('aria-expanded', tabIndex === index ? arrPanels[tabIndex].getAttribute('hidden') ? 'true' : false : true);
 
@@ -102,6 +112,18 @@ class Tabs {
 		arrTabs[0].removeAttribute('tabindex');
 		arrTabs[0].setAttribute('aria-selected', 'true');
 		arrPanels[0].removeAttribute('hidden');
+
+		if (this.hash !== '') {
+			const objHashEl = document.querySelector('a[href="' + this.hash + '"]');
+			if (objHashEl) {
+				objHashEl.click();
+				window.scrollTo({
+					top: objHashEl.getBoundingClientRect().top,
+					left: 0,
+					behavior: 'smooth'
+				});
+			}
+		}
 
 	}
 
@@ -122,10 +144,17 @@ class Tabs {
 
 		// Get the indices of the new and old tabs to find the correct
 		// tab panels to show and hide
-		let index = Array.prototype.indexOf.call(arrTabs, newTab);
-		let oldIndex = Array.prototype.indexOf.call(arrTabs, oldTab);
+		const index = Array.prototype.indexOf.call(arrTabs, newTab);
+		const oldIndex = Array.prototype.indexOf.call(arrTabs, oldTab);
 		arrPanels[oldIndex].setAttribute('hidden', true);
 		arrPanels[index].removeAttribute('hidden');
+
+
+		if (!this.popped) {
+			const strId = arrPanels[index].id;
+			history.pushState({ tab: `#${strId}` }, "", window.location.href.replace(window.location.hash, "") + `#${strId}`);
+		}
+		this.popped = false;
 
 	}
 
